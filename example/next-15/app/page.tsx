@@ -6,8 +6,8 @@ import {
   createHpkeSuite,
   generateKeyPair,
   uint8ArrayToBase64,
-} from "@ubay182/nextjs-hpke-wrapper";
-import { seal, unseal } from "@ubay182/nextjs-hpke-wrapper";
+} from "@ubay182/hpke-wrapper";
+import { seal, unseal } from "@ubay182/hpke-wrapper";
 
 export default function main() {
   const formRef = useRef<HTMLFormElement>(null);

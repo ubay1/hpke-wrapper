@@ -1,4 +1,4 @@
-import { createHpkeServer, type HpkeServerInstance } from "@ubay182/nextjs-hpke-wrapper";
+import { createHpkeServer, type HpkeServerInstance } from "@ubay182/hpke-wrapper";
 
 // Shared singleton — auto-generate keys, persist to file, rotate every 24h
 export const hpkeServer: HpkeServerInstance = createHpkeServer({

@@ -9,11 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@hpke/chacha20poly1305": "^1.8.0",
-    "@hpke/core": "^1.9.0",
-    "@hpke/dhkem-x25519": "^1.8.0",
     "@ubay182/hpke-wrapper": "file:../..",
-    "hpke": "^1.1.2",
     "next": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

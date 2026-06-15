@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Next.js HPKE Demo",
@@ -12,14 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        style={{
-          fontFamily: "system-ui, sans-serif",
-          padding: 24,
-          maxWidth: 720,
-          margin: "0 auto",
-        }}
-      >
+      <body>
         {children}
       </body>
     </html>

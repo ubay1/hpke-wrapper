@@ -4,10 +4,10 @@ HPKE (Hybrid Public Key Encryption) wrapper for modern web applications (Next.js
 
 ## Demo
 
-Check out the complete implementation examples in the [`example/`](https://github.com/ubay1/hpke-wrapper/example) folder:
+Check out the complete implementation examples in the [`example/`](https://github.com/ubay1/hpke-wrapper/tree/main/example) folder:
 
-- [Next.js Example](https://github.com/ubay1/hpke-wrapper/example/next-16)
-- [SvelteKit Example](https://github.com/ubay1/hpke-wrapper/example/sveltekit)
+- [Next.js Example](https://github.com/ubay1/hpke-wrapper/tree/main/example/next-16)
+- [SvelteKit Example](https://github.com/ubay1/hpke-wrapper/tree/main/example/sveltekit)
 
 ```bash
 cd example/next-16 # or example/sveltekit

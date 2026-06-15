@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+// import './envConfig'
 
 /**
  * Middleware that sets the HPKE server public key cookie.
@@ -16,7 +17,7 @@ export async function middleware(request: NextRequest) {
     }
 
     // Check if cookie already exists
-    const existingKey = request.cookies.get("hpke_server_public_key")?.value;
+    const existingKey = request.cookies.get(process.env.NEXT_PUBLIC_CPK || "hpke_server_public_key")?.value;
     if (existingKey) {
       return NextResponse.next();
     }
@@ -38,7 +39,7 @@ export async function middleware(request: NextRequest) {
 
     const response = NextResponse.next();
 
-    response.cookies.set("hpke_server_public_key", publicKey, {
+    response.cookies.set(process.env.NEXT_PUBLIC_CPK || "hpke_server_public_key", publicKey, {
       path: "/",
       sameSite: "lax",
       secure: process.env.NODE_ENV === "production",

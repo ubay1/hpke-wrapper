@@ -16,7 +16,7 @@ export default async function proxy(request: NextRequest) {
     }
 
     // Check if cookie already exists
-    const existingKey = request.cookies.get("hpke_server_public_key")?.value;
+    const existingKey = request.cookies.get(process.env.NEXT_PUBLIC_CPK || "hpke_server_public_key")?.value;
     if (existingKey) {
       console.log('existingKey', existingKey)
       return NextResponse.next();
@@ -42,7 +42,7 @@ export default async function proxy(request: NextRequest) {
 
     const response = NextResponse.next();
 
-    response.cookies.set("hpke_server_public_key", publicKey, {
+    response.cookies.set(process.env.NEXT_PUBLIC_CPK || "hpke_server_public_key", publicKey, {
       path: "/",
       sameSite: "lax",
       secure: process.env.NODE_ENV === "production",

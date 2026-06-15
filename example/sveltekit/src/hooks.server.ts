@@ -1,5 +1,6 @@
 import type { Handle } from '@sveltejs/kit';
 import { hpkeServer } from '$lib/server/hpke-instance';
+import { PUBLIC_CPK } from '$env/static/public';
 
 /**
  * Server hook that sets the HPKE server public key cookie.
@@ -16,7 +17,7 @@ export const handle: Handle = async ({ event, resolve }) => {
     }
 
     // Check if cookie already exists
-    const existingKey = event.cookies.get('hpke_server_public_key');
+    const existingKey = event.cookies.get(PUBLIC_CPK || 'hpke_server_public_key');
     if (existingKey) {
       return resolve(event);
     }
@@ -34,7 +35,7 @@ export const handle: Handle = async ({ event, resolve }) => {
     // Set the cookie on the response
     response.headers.append(
       'set-cookie',
-      `hpke_server_public_key=${encodeURIComponent(publicKey)}; Path=/; SameSite=Lax`
+      `${PUBLIC_CPK || 'hpke_server_public_key'}=${encodeURIComponent(publicKey)}; Path=/; SameSite=Lax`
     );
 
     return response;

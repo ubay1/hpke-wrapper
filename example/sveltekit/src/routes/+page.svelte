@@ -8,6 +8,8 @@
     unseal,
   } from '@ubay182/hpke-wrapper';
   import { onMount } from 'svelte';
+import { PUBLIC_CPK } from '$env/static/public';
+
 
   let status = $state('Initializing...');
   let response = $state('');
@@ -25,7 +27,7 @@
 
     const cookie = document.cookie
       .split('; ')
-      .find((row) => row.startsWith('hpke_server_public_key='));
+      .find((row) => row.startsWith(`${PUBLIC_CPK || 'hpke_server_public_key'}=`));
 
     if (cookie) {
       publicKeyB64 = decodeURIComponent(

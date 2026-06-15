@@ -1,4 +1,4 @@
-## Ringkasan Perbaikan Error `OpenError` pada HPKE Unseal
+## Ringkasan Perbaikan Error `OpenError` pada HPKE Unseal di Next.js 15
 
 Ditemukan **5 bug** yang menyebabkan error `OpenError: The operation failed for an operation-specific reason`. Berikut ringkasannya:
 

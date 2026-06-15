@@ -22,7 +22,11 @@ async function initKeys(): Promise<HpkeKeys> {
 
   const cookie = document.cookie
     .split("; ")
-    .find((row) => row.startsWith("hpke_server_public_key="));
+    .find((row) =>
+      row.startsWith(
+        `${process.env.NEXT_PUBLIC_CPK}=` || "hpke_server_public_key=",
+      ),
+    );
 
   if (cookie) {
     publicKeyB64 = decodeURIComponent(

@@ -18,18 +18,9 @@ export {
   createHpkeServer,
   type HpkeServerInstance,
   type HpkeServerConfig,
-  type HpkeRequestContext,
-  type HpkeResponseContext,
 } from './server.js';
 
 export {
   seal,
   unseal,
 } from './operation.js';
-
-export {
-  createHpkeHandlers,
-  createHpkeMiddleware,
-  type HpkeRouteConfig,
-  type HpkeRouteHandlers,
-} from './nextjs.js';
